@@ -45,11 +45,11 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- TODO: Feel free to modify anything inside main.css -->
     <link rel="stylesheet" href="../static/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>cact-I + cact-you = cact-us</title>
@@ -70,54 +70,73 @@
     <!-- If you add any new buttons, you need to update the javascript file, for
     corresponding button id, so that clicks of that button could be logged -->
     <div class="content-pane">
-      <div class="vendor-wrapper" id="mp1">
-        <img src="../static/coppercombo.png" class="vendor-photo" />
-        <button class="vendor-book-button btn btn-primary" type="submit" id="mp1">
-          Add To Cart
-        </button>
-        <span><span id="mp1-added">0</span> in cart</span>
-        <p>Stunning succulent combo, featuring 3 adolescent cacti in
-          industrial copper pots. <i>$9.99</i>
-        </p>
+      <div class="card-deck text-center">
+        <div class="card" id="mp1">
+          <img src="../static/coppercombo.png" class="card-img">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h2 class="card-title">audacious aditi</h2>
+            <div>
+              <button class="vendor-book-button btn btn-success" type="submit" id="mp1">
+                Add To Cart
+              </button>
+            </div>
+            <span><span id="mp1-added" class="font-weight-bold">0</span> in cart</span>
+            <p>Stunning succulent combo, featuring 3 adolescent cacti in
+              industrial copper pots.</p>
+            <strong>$9.99</strong>
+            </p>
+          </div>
+        </div>
+        <div class="card" id="mp2">
+          <img src="../static/geoprickly.jpg" class="card-img">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h2 class="card-title">bountiful benny</h2>
+            <div>
+              <button class="vendor-book-button btn btn-success" type="submit" id="mp2">
+                Add To Cart
+              </button>
+            </div>
+            <span><span id="mp2-added" class="font-weight-bold">0</span> in cart</span>
+            <p>Beautiful prickly pair in modern geometric pots.</p>
+            <strong>$14.99</strong>
+          </div>
+        </div>
+        <div class="card" id="mp3">
+          <img src="../static/garden.jpg" class="card-img">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h2 class="card-title">curious charlie</h2>
+            <div>
+              <button class="vendor-book-button btn btn-success" type="submit" id="mp3">
+                Add To Cart
+              </button>
+            </div>
+            <span><span id="mp3-added" class="font-weight-bold">0</span> in cart</span>
+            <p>Cacti and succulent mini-garden in a congenial and rustic pot.</p>
+            <strong>$25.99</strong>
+          </div>
+        </div>
+        <div class="card" id="mp4">
+          <img src="../static/garden-combo.jpg" class="card-img">
+          <div class="card-body d-flex flex-column justify-content-center">
+            <h2 class="card-title">doomer danny</h2>
+            <div>
+              <button class="vendor-book-button btn btn-success" type="submit" id="mp4">
+                Add To Cart
+              </button>
+            </div>
+            <span><span id="mp4-added" class="font-weight-bold">0</span> in cart</span>
+            <p>Cacti, succulent, and garden combo in handcrafted pots.</p>
+            <strong>$34.99</strong>
+          </div>
+        </div>
       </div>
-
-      <div class="vendor-wrapper" id="mp2">
-        <img src="../static/geoprickly.jpg" class="vendor-photo" />
-        <button class="vendor-book-button btn btn-primary" type="submit" id="mp2">
-          Add To Cart
-        </button>
-        <span><span id="mp2-added">0</span> in cart</span>
-        <p>Beautiful prickly pair in modern geometric pots. <i>$14.99</i>
-        </p>
-      </div>
-
-      <div class="vendor-wrapper" id="mp3">
-        <img src="../static/garden.jpg" class="vendor-photo" />
-        <button class="vendor-book-button btn btn-primary" type="submit" id="mp3">
-          Add To Cart
-        </button>
-        <span><span id="mp3-added">0</span> in cart</span>
-        <p>Cacti and succulent mini-garden in a congenial and rustic pot. <i>$25.99</i>
-        </p>
-      </div>
-
-      <div class="vendor-wrapper" id="mp4">
-        <img src="../static/garden-combo.jpg" class="vendor-photo" />
-        <button class="vendor-book-button btn btn-primary" type="submit" id="mp4">
-          Add To Cart
-        </button>
-        <span><span id="mp4-added">0</span> in cart</span>
-        <p>Cacti, succulent, and garden combo in handcrafted pots. <i>$34.99</i>
-        </p>
-      </div>
-
-      <div id="cart-wrapper">
+      <div id="cart-wrapper" class="text-center mt-3">
         <a onclick='navigateToCheckout()'>
         <span id="cart" class="fa-stack fa-2x has-badge" data-count="0">
           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
           <i class="fa fa-shopping-cart fa-stack-2x red-cart"></i>
-        </span> CART
-      </a>
+        </span> Proceed to checkout
+        </a>
       </div>
     </div>
 
@@ -225,5 +244,7 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
      </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
